@@ -1,5 +1,5 @@
 module Validation
-  module Numeric
+  module IsInteger
     def valid(input)
       if input.is_a?(Integer)
         true

@@ -5,9 +5,10 @@ module Validation
     @result
 
     input.each do |key, value|
-      extend Validation::const_get key.to_s.capitalize
-      
-     @result = valid(value)
+      key_module = "Is#{key.to_s.capitalize}"
+
+      extend Validation::const_get key_module
+      @result = valid(value)
     end
 
    @result

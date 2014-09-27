@@ -5,9 +5,8 @@ describe Validation do
   it "should read hash of input" do
     extend Validation
     
-    input = {numeric: 5}
+    input = {integer: 5}
     validation(input).should eq(true)
-
   end
 end
 
