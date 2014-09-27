@@ -6,7 +6,10 @@ describe Validation do
     extend Validation
     
     input = {integer: 5}
-    validation(input).should eq(true)
+    
+    #validation 5, integer: true
+
+    validation(input, true).should eq(true)
   end
 end
 
