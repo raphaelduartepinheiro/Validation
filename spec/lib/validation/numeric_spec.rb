@@ -5,6 +5,7 @@ describe Validation::Numeric do
   it "should return true for integer object" do
     extend Validation::Numeric
 
-    validate(5).should eq(true)
+    input = { numeric: 5 }
+    validate(input).should eq(true)
   end
 end
