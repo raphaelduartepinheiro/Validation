@@ -1,10 +1,10 @@
 module Validation
   require "validation/is_integer"
 
-  def validation(input, option)
+  def validate(input, option)
     options = set_values(input, option)
     load_module(options[:val_module])
-    validate(options[:input], options[:rule])
+    validation(options[:input], options[:rule])
   end
 
   def load_module(module_name)
