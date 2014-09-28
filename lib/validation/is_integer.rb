@@ -1,6 +1,6 @@
 module Validation
   module IsInteger
-    def valid(input, value)
+    def validate(input, value)
       input = input.is_a?(Integer)
       if input == value
         true
