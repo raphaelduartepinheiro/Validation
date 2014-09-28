@@ -1,9 +1,10 @@
 module Validation
   module IsInteger
-    def valid(input, param)
-      rule = input.is_a?(Integer)
+    def valid(input, value)
 
-      if rule == param
+      input = input.is_a?(Integer)
+
+      if input == value
         true
       else
         false
