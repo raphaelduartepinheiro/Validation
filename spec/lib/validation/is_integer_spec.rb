@@ -6,16 +6,16 @@ describe Validation::IsInteger do
     extend Validation::IsInteger
   end
 
-  it "should return true for integer input" do
-    valid?(5, true).should eq(true)
+  it "should return true" do
+    expect(valid?(5, true)).to eq(true)
   end
 
-  it "should return true for string input with option false" do
-    valid?("five", false).should eq(true)
+  it "should return true" do
+    expect(valid?("five", false)).to eq(true)
   end
 
-  it "should return false for string input with option true" do
-    valid?("five", true).should eq(false)
+  it "should return false" do
+    expect(valid?("five", true)).to eq(false)
   end
 end
 
