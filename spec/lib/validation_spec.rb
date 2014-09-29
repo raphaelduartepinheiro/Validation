@@ -13,7 +13,7 @@ describe Validation do
 
   it "load module" do
     load_module("IsInteger")
-    validation(5, true).should eq(true)
+    valid?(5, true).should eq(true)
   end
 
   it "return validation boolean" do

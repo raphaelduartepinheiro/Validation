@@ -4,13 +4,13 @@ module Validation
   def validate(input, option)
     options = set_values(input, option)
     load_module(options[:val_module])
-    validation(options[:input], options[:rule])
+    valid?(options[:input], options[:rule])
   end
 
   def validate!(input, option)
     options = set_values(input, option)
     load_module(options[:val_module])
-    result = validation(options[:input], options[:rule])
+    result = valid?(options[:input], options[:rule])
 
     unless result
       raise TypeError, "The input #{input} does not match the rule #{options[:option]} with option #{options[:rule]}" 
