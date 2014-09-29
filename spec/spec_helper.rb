@@ -1,7 +1,7 @@
 RSpec.configure do |config|
   $LOAD_PATH << "../lib"
   
-  #remove deprecation warnings
+  #not show deprecation warnings
   config.mock_with :rspec do |c|
     c.syntax = [:should, :expect]
   end
