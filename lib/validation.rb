@@ -1,5 +1,6 @@
 module Validation
   require "validation/is_integer"
+  require "validation/is_boolean"
 
   def validate(input, option)
     options = set_values(input, option)
