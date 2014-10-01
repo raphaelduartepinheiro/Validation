@@ -16,6 +16,15 @@ describe Validation do
       load_module("IsInteger")
       expect(valid?(5, true)).to eq(true)
     end
+
+    it "read a block" do
+      validate(5) do
+        integer: true
+        boolean: true
+      end
+
+    end
+
   end
 end
 
