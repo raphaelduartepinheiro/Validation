@@ -2,7 +2,13 @@ module Validation
   require "validation/is_integer"
   require "validation/is_boolean"
 
-  def validate(input, option)
+  def self.params
+    if block_given?
+      yield
+    end
+  end
+
+  def self.validate(input, option)
     options = set_values(input, option)
     load_module(options[:val_module])
     valid?(options[:input], options[:rule])
@@ -18,11 +24,11 @@ module Validation
     end
   end
 
-  def load_module(module_name)
+  def self.load_module(module_name)
     extend Validation::const_get module_name
   end
 
-  def set_values(input, option)
+  def self.set_values(input, option)
     option.each do |k, v|
       @module = "Is#{k.to_s.capitalize}"
       @rule = v

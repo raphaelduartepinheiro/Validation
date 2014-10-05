@@ -9,22 +9,20 @@ describe Validation do
   context "when call #validate" do
     it "set values" do
       result = { val_module: "IsInteger", input: 5, rule: true, option: "integer"}
-      expect(set_values(5, integer: true)).to eq(result)
+      expect(Validation.set_values(5, integer: true)).to eq(result)
     end
 
     it "load module" do
-      load_module("IsInteger")
-      expect(valid?(5, true)).to eq(true)
+      Validation.load_module("IsInteger")
+      expect(Validation.valid?(5, true)).to eq(true)
     end
 
     it "read a block" do
-      validate(5) do
-        integer: true
-        boolean: true
+      Validation.params do
+        Validation.validate(5, integer: true)
+        Validation.validate(true, boolean: true)
       end
-
     end
-
   end
 end
 
