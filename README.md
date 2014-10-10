@@ -1,4 +1,4 @@
 Validation
 ==========
 
-Awesome validations
+Awesome validations for your ruby projects
