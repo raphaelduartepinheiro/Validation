@@ -1,5 +1,5 @@
 require "spec_helper"
-require "validation/is_integer"
+require "rules/is_integer"
 
 describe Validation::IsInteger do
   before :each do
@@ -7,15 +7,15 @@ describe Validation::IsInteger do
   end
 
   it "should return true" do
-    expect(valid?(5, true)).to eq(true)
+    expect(validate(5, true)).to eq(true)
   end
 
   it "should return true" do
-    expect(valid?("five", false)).to eq(true)
+    expect(validate("five", false)).to eq(true)
   end
 
   it "should return false" do
-    expect(valid?("five", true)).to eq(false)
+    expect(validate("five", true)).to eq(false)
   end
 end
 
