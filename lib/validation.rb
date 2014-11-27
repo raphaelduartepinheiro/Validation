@@ -1,6 +1,6 @@
 module Validation
-  require "validation/is_integer"
-  require "validation/is_boolean"
+  require "rules/is_integer"
+  require "rules/is_boolean"
 
   def self.params
     if block_given?

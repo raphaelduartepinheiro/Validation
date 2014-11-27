@@ -7,6 +7,7 @@ describe Validation do
   end
   
   context "when call #validate" do
+
     it "set values" do
       result = { val_module: "IsInteger", input: 5, rule: true, option: "integer"}
       expect(Validation.set_values(5, integer: true)).to eq(result)
@@ -23,6 +24,7 @@ describe Validation do
         Validation.validate(true, boolean: true)
       end
     end
+
   end
 end
 
