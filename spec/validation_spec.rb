@@ -3,6 +3,11 @@ require "validation"
 
 describe Validation do
   subject { Validation }
+  before { subject.load_module("integer") }
+
+  it "load module" do
+    expect(subject.methods.include?(:is_valid?)).to eq(true)
+  end
 
   context "validate is integer" do
     it "should return true" do
