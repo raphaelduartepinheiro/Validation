@@ -1,15 +1,15 @@
 module Validation
-  module IsInteger
+  module Rules
+    module IsInteger
+      def is_valid?(input, rule)
+        input = input.is_a?(Integer)
 
-    def is_valid?(input, rule)
-      input = input.is_a?(Integer)
-
-      if input == rule
-        true
-      else
-        false
+        if input == rule
+          true
+        else
+          false
+        end
       end
     end
-
   end
 end

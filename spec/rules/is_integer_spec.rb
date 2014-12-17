@@ -1,8 +1,8 @@
 require "spec_helper"
 require "rules/is_integer"
 
-describe Validation::IsInteger do
-  before { extend Validation::IsInteger }
+describe Validation::Rules::IsInteger do
+  before { extend Validation::Rules::IsInteger }
 
   context "with valid params" do
     it "should return true" do
@@ -18,4 +18,3 @@ describe Validation::IsInteger do
     end
   end
 end
-
