@@ -2,20 +2,20 @@ require "spec_helper"
 require "rules/is_integer"
 
 describe Validation::IsInteger do
-  before :each do
-    extend Validation::IsInteger
+  before { extend Validation::IsInteger }
+
+  context "with valid params" do
+    it "should return true" do
+      expect(is_valid?(5, true)).to eq(true)
+      expect(is_valid?("five", false)).to eq(true)
+    end
   end
 
-  it "should return true" do
-    expect(validate(5, true)).to eq(true)
-  end
-
-  it "should return true" do
-    expect(validate("five", false)).to eq(true)
-  end
-
-  it "should return false" do
-    expect(validate("five", true)).to eq(false)
+  context "with invalid params" do
+    it "should return false" do
+      expect(is_valid?("five", true)).to eq(false)
+      expect(is_valid?(5, false)).to eq(false)
+    end
   end
 end
 

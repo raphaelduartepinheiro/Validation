@@ -1,7 +1,7 @@
 module Validation
   module IsBoolean
 
-    def validate(input, rule)
+    def is_valid?(input, rule)
       input = input.is_a?(TrueClass) || input.is_a?(FalseClass)
 
       if input == rule
