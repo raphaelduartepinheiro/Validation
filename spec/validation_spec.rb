@@ -3,14 +3,9 @@ require "validation"
 
 describe Validation do
   subject { Validation }
-  before { subject.load_module("integer") }
-
-  it "set some values for methods" do
-    hash = { :rule=>"integer", :input=>5 }
-    expect(subject.set_values(integer: 5)).to eq(hash)
-  end
 
   it "load module" do
+    subject.validate(integer: 5)
     expect(subject.private_methods.include?(:is_valid?)).to eq(true)
   end
 

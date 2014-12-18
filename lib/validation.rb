@@ -4,19 +4,10 @@ module Validation
 
   class << self
 
-    def set_values(input)
-      { rule: input.keys.first.to_s, input: input.values.first }
-    end
-
     def validate(input)
       option = set_values(input)
       load_module(option[:rule])
       is_valid?(option[:input])
-    end
-
-    def load_module(name)
-      module_name = "Is#{name.capitalize}"
-      extend self::Rules::const_get(module_name)
     end
 
     def validate!(input)
@@ -30,5 +21,15 @@ module Validation
         result
       end
     end
+
+    private
+      def set_values(input)
+        { rule: input.keys.first.to_s, input: input.values.first }
+      end
+
+      def load_module(name)
+        module_name = "Is#{name.capitalize}"
+        extend self::Rules::const_get(module_name)
+      end
   end
 end
