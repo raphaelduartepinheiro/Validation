@@ -11,7 +11,7 @@ describe Validation do
   end
 
   it "load module" do
-    expect(subject.methods.include?(:is_valid?)).to eq(true)
+    expect(subject.private_methods.include?(:is_valid?)).to eq(true)
   end
 
   context "validate is integer" do
