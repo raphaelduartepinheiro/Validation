@@ -1,6 +1,7 @@
 module Validation
   require "rules/is_integer"
   require "rules/is_boolean"
+  require "rules/is_string"
 
   class << self
 

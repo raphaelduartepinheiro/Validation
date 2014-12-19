@@ -38,4 +38,14 @@ describe Validation do
       expect(subject.validate(boolean: "true")).to eq(false)
     end
   end
+
+  context "validate is string" do
+    it "should return true" do
+      expect(subject.validate(string: "Matisyahu")).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validate(string: 5)).to eq(false)
+    end
+  end  
 end
