@@ -1,5 +1,5 @@
 require "spec_helper"
-require "rules/is_boolean"
+require "rules/is_email"
 
 describe Validation::Rules::IsEmail do
   before { extend Validation::Rules::IsEmail }
