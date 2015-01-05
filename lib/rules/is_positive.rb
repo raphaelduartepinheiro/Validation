@@ -3,7 +3,7 @@ module Validation
     module IsPositive
       private
         def is_valid?(input)
-          input >= 0 ? true : false
+          input >= 0
         end
     end
   end
