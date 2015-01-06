@@ -9,6 +9,16 @@ describe Validation do
     expect(subject.private_methods.include?(:is_valid?)).to eq(true)
   end
 
+  context "validate is email" do
+    it "should return true" do
+      expect(subject.validade(email: "user@example.com.br")).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validade(email: "user@example")).to eq(false)
+    end
+  end
+
   context "validate is integer" do
     context "validate with raise error" do
       it "should return true" do

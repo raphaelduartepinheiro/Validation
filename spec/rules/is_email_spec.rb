@@ -10,15 +10,9 @@ describe Validation::Rules::IsEmail do
     end
   end
 
-  context "with invalid params without at sign" do
-    it "should return false" do
-      expect(is_valid?("user9gjsgd.com")).to eq(false)
-    end
-  end
-
   context "with invalid params" do
     it "should return false" do
-      expect(is_valid?("user@gjsgd.")).to eq(false)
+      expect(is_valid?("usergjsgd.com")).to eq(false)
     end
   end
 
