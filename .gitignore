@@ -1,2 +1,5 @@
 # Ignore todo
 .todo.txt
+
+# Ignore Gemfile.lock
+/Gemfile.lock
