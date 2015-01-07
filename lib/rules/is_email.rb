@@ -3,8 +3,6 @@ module Validation
 		module IsEmail
 			private
 				def is_valid?(input)
-					input.downcase!
-					
 					!/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.match(input).nil?
 				end
 		end
