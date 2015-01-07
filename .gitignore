@@ -3,3 +3,7 @@
 
 # Ignore Gemfile.lock
 /Gemfile.lock
+
+# Ignore DS Store files
+.DS_Store
+
