@@ -67,5 +67,15 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(email: "user@example")).to eq(false)
     end
-  end  
+  end
+
+  context "validade is date" do
+    it "should return true" do
+      expect(subject.validate(date: "20-12-2015")).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validate(date: "100-120-2015")).to eq(false)
+    end
+  end
 end

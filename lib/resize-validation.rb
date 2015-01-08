@@ -5,6 +5,7 @@ require "resize/rules/is_boolean"
 require "resize/rules/is_string"
 require "resize/rules/is_positive"
 require "resize/rules/is_email"
+require "resize/rules/is_date"
 
 module Resize
 end
