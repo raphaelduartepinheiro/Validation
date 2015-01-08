@@ -10,11 +10,7 @@ module Resize
       end
 
       def validate!(input)
-        option = set_values(input)
-        load_module(option[:rule])
-        result = is_valid?(option[:input])
-
-        if result == false
+        unless validate(input)
           raise TypeError, "The input #{option[:input]} does not match the rule #{option[:rule]}"
         else
           result
