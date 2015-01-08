@@ -1,5 +1,4 @@
 # coding: utf-8
-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'version'
@@ -7,12 +6,12 @@ require 'version'
 Gem::Specification.new do |spec|
   spec.name          = "Validation"
   spec.version       = Validation::VERSION
-  spec.authors       = ["Londerson Araújo"]
-  spec.email         = ["londerson@gmail.com"]
-  spec.summary       = %q{"Validate data."}
-  spec.description   = %q{"An extensive pack of customizable and extensible validation."}
-  spec.homepage      = "https://github.com/Resize/Validation"
-  spec.license       = "MIT"
+  spec.authors       = [""] # TODO: Add Author's Name
+  spec.email         = [""] # TODO: Add Author's Email
+  spec.summary       = %q{TODO: Write a short summary. Required.}
+  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.homepage      = "" # TODO: Add Gem's Website
+  spec.license       = "" # TODO: Specify the lincence to be used
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
