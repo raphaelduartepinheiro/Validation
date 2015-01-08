@@ -1,5 +1,5 @@
 require "spec_helper"
-require "validation"
+require "resize/validation"
 
 describe Resize::Validation do
   subject { Resize::Validation }
