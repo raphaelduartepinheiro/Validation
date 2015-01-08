@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "Validation"
+  spec.name          = "resize-validation"
   spec.version       = Validation::VERSION
   spec.authors       = ["Londerson Araújo"]
   spec.email         = ["londerson@gmail.com"]
