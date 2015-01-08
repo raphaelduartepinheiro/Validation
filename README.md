@@ -1,10 +1,8 @@
-Validation
-==========
+###Validation
 
 An extensive pack of customizable and extensible validation.
 
-Installation
-==========
+###Installation
 
 ```shell
 gem install respect_validation
@@ -14,8 +12,7 @@ gem install respect_validation
 require 'resize-validation'
 ```
 
-Usage
-=====
+###Usage
 
 ```ruby
 Resize::Validation::validation(email: 'londerson@gmail.com') #true
