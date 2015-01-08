@@ -15,7 +15,10 @@ require 'resize-validation'
 ###Usage
 
 ```ruby
-Resize::Validation::validation(email: 'londerson@gmail.com') #true
-Resize::Validation::validation(string: 5) #false
-Resize::Validation::validation!(integer: 'five') raises "The input five does not match the rule integer"
+Resize::Validation::validation(email: 'londerson@gmail.com') 
+ # => true
+Resize::Validation::validation(string: 5) 
+ # => false
+Resize::Validation::validation!(integer: 'five')
+ # => raises "The input five does not match the rule integer"
 ```
