@@ -1,5 +1,5 @@
 require "spec_helper"
-require "rules/is_boolean"
+require "resize/rules/is_boolean"
 
 describe Resize::Validation::Rules::IsBoolean do
   before { extend Resize::Validation::Rules::IsBoolean }

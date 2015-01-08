@@ -1,5 +1,5 @@
 require "spec_helper"
-require "rules/is_integer"
+require "resize/rules/is_integer"
 
 describe Resize::Validation::Rules::IsInteger do
   before { extend Resize::Validation::Rules::IsInteger }
