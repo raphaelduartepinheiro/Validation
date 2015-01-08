@@ -5,7 +5,7 @@ An extensive pack of customizable and extensible validation.
 ###Installation
 
 ```shell
-gem install respect_validation
+gem install resize_validation
 ```
 
 ```shell
