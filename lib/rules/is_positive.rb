@@ -1,10 +1,12 @@
-module Validation
-  module Rules
-    module IsPositive
-      private
-        def is_valid?(input)
-          input >= 0 ? true : false
-        end
+module Resize
+  module Validation
+    module Rules
+      module IsPositive
+        private
+          def is_valid?(input)
+            input >= 0
+          end
+      end
     end
   end
 end

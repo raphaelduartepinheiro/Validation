@@ -1,8 +1,8 @@
 require "spec_helper"
 require "validation"
 
-describe Validation do
-  subject { Validation }
+describe Resize::Validation do
+  subject { Resize::Validation }
 
   it "load module" do
     subject.validate(integer: 5)

@@ -1,8 +1,8 @@
 require "spec_helper"
 require "rules/is_boolean"
 
-describe Validation::Rules::IsBoolean do
-  before { extend Validation::Rules::IsBoolean }
+describe Resize::Validation::Rules::IsBoolean do
+  before { extend Resize::Validation::Rules::IsBoolean }
   
   context "with valid params" do
     it "should return true" do

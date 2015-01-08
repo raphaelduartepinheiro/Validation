@@ -1,8 +1,8 @@
 require "rules/is_positive"
 require "spec_helper"
 
-describe Validation::Rules::IsPositive do
-  before { extend Validation::Rules::IsPositive }
+describe Resize::Validation::Rules::IsPositive do
+  before { extend Resize::Validation::Rules::IsPositive }
 
   context "with valid params" do
     it "should return true" do

@@ -1,8 +1,8 @@
 require "spec_helper"
 require "rules/is_integer"
 
-describe Validation::Rules::IsInteger do
-  before { extend Validation::Rules::IsInteger }
+describe Resize::Validation::Rules::IsInteger do
+  before { extend Resize::Validation::Rules::IsInteger }
 
   context "with valid params" do
     it "should return true" do

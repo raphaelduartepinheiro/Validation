@@ -1,8 +1,8 @@
 require "spec_helper"
 require "rules/is_email"
 
-describe Validation::Rules::IsEmail do
-  before { extend Validation::Rules::IsEmail }
+describe Resize::Validation::Rules::IsEmail do
+  before { extend Resize::Validation::Rules::IsEmail }
   
   context "with valid params" do
     it "should return true" do
