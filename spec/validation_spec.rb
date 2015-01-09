@@ -78,4 +78,15 @@ describe Resize::Validation do
       expect(subject.validate(date: "100-120-2015")).to eq(false)
     end
   end
+
+  # Validation for rule is_json
+  context "validate is json" do
+    it "should return true" do
+      expect(subject.validate(json: '{"name": "resize"}')).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validate(json: '{"name"; "resize"}')).to eq(false)
+    end
+  end
 end
