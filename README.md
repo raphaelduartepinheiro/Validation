@@ -2,6 +2,8 @@
 
 [![Code Climate](https://codeclimate.com/github/Resize/Validation/badges/gpa.svg)](https://codeclimate.com/github/Resize/Validation)
 
+[![Test Coverage](https://codeclimate.com/github/Resize/Validation/badges/coverage.svg)](https://codeclimate.com/github/Resize/Validation)
+
 An extensive pack of customizable and extensible validation.
 
 ###Installation
