@@ -8,5 +8,4 @@ require "resize/rules/is_email"
 require "resize/rules/is_date"
 require "resize/rules/is_json"
 
-module Resize
-end
+module Resize; end
