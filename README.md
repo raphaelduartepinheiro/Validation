@@ -35,3 +35,7 @@ Resize::Validation::validation!(integer: 'five')
 * [is_positive](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_positive.rb "Title")
 * [is_string](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_string.rb "Title")
 
+
+###License
+
+Copyright © 2014 Londerson Araújo, released under the MIT license
