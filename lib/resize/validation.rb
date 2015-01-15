@@ -6,7 +6,12 @@ module Resize
       def validate(input)
         option = set_values(input)
         load_module(option[:rule])
-        is_valid?(option[:input])
+
+        if option[:input].kind_of?(Array)
+          is_valid?(option[:input][0], option[:input][1])
+        else
+          is_valid?(option[:input])
+        end
       end
 
       def validate!(input)
