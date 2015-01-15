@@ -80,7 +80,6 @@ describe Resize::Validation do
     end
   end
 
-  # Validation for rule is_json
   context "validate is json" do
     it "should return true" do
       expect(subject.validate(json: '{"name": "resize"}')).to eq(true)
@@ -88,6 +87,16 @@ describe Resize::Validation do
 
     it "should return false" do
       expect(subject.validate(json: '{"name"; "resize"}')).to eq(false)
+    end
+  end
+
+  context "validate is multiple" do
+    it "should return true" do
+      expect(subject.validate(multiple: [9, 3])).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validate(multiple: [8, 3])).to eq(false)
     end
   end
 end
