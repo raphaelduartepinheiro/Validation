@@ -60,6 +60,16 @@ describe Resize::Validation do
     end
   end
 
+  context "validate is negative" do
+    it "should return true" do
+      expect(subject.validate(negative: -5)).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validate(negative: 5)).to eq(false)
+    end
+  end
+
   context "validate is email" do
     it "should return true" do
       expect(subject.validate(email: "user@example.com.br")).to eq(true)
