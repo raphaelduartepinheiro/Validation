@@ -6,6 +6,7 @@
 
 # Ignore DS Store files
 .DS_Store
+**/.DS_Store
 
 # Ignore Gem
 resize-validation-0.0.4.gem
