@@ -109,4 +109,14 @@ describe Resize::Validation do
       expect(subject.validate(multiple: [8, 3])).to eq(false)
     end
   end
+
+  context "validate is empty" do
+    it "should return true" do
+      expect(subject.validate(empty: "")).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validate(empty: "londerson@gmail.com")).to eq(false)
+    end
+  end  
 end

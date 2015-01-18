@@ -9,5 +9,6 @@ require "resize/rules/is_email"
 require "resize/rules/is_date"
 require "resize/rules/is_json"
 require "resize/rules/is_multiple"
+require "resize/rules/is_empty"
 
 module Resize; end
