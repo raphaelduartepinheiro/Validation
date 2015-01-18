@@ -37,6 +37,7 @@ Resize::Validation::validation!(integer: 'five')
 * [is_negative](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_negative.rb "Title")
 * [is_string](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_string.rb "Title")
 * [is_multiple](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_multiple.rb "Title")
+* [is_empty](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_empty.rb "Title")
 
 ###License
 
