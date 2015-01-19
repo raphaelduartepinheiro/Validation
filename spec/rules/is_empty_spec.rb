@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_empty"
 
 describe Resize::Validation::Rules::IsEmpty do
   before { extend Resize::Validation::Rules::IsEmpty }

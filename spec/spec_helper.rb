@@ -1,4 +1,6 @@
 require "codeclimate-test-reporter"
+require "resize-validation"
+
 CodeClimate::TestReporter.start
 
 RSpec.configure do |config|

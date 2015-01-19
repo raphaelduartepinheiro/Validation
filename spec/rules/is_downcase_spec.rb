@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_downcase"
 
 describe Resize::Validation::Rules::IsDowncase do
   before { extend Resize::Validation::Rules::IsDowncase }

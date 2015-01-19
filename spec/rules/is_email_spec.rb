@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_email"
 
 describe Resize::Validation::Rules::IsEmail do
   before { extend Resize::Validation::Rules::IsEmail }

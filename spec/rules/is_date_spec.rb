@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_date"
 
 describe Resize::Validation::Rules::IsDate do
   before { extend Resize::Validation::Rules::IsDate }

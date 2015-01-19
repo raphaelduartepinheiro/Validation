@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_negative"
 
 describe Resize::Validation::Rules::IsNegative do
   before { extend Resize::Validation::Rules::IsNegative }
