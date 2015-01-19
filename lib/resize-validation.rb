@@ -11,5 +11,6 @@ require "resize/rules/is_json"
 require "resize/rules/is_multiple"
 require "resize/rules/is_empty"
 require "resize/rules/is_downcase"
+require "resize/rules/is_uppercase"
 
 module Resize; end

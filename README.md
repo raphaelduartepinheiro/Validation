@@ -39,6 +39,7 @@ Resize::Validation::validation!(integer: 'five')
 * [is_multiple](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_multiple.rb "Title")
 * [is_empty](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_empty.rb "Title")
 * [is_downcase](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_downcase.rb "Title")
+* [is_uppercase](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_uppercase.rb "Title")
 
 ###License
 
