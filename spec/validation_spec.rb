@@ -118,5 +118,15 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(empty: "londerson@gmail.com")).to eq(false)
     end
+  end
+
+  context "validate is downcase" do
+    it "should return true" do
+      expect(subject.validate(downcase: "my name")).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validate(downcase: "My name")).to eq(false)
+    end
   end  
 end
