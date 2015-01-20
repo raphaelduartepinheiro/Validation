@@ -23,7 +23,7 @@ Resize::Validation::validation(email: 'londerson@gmail.com')
 Resize::Validation::validation(string: 5)
  # => false
 Resize::Validation::validation!(integer: 'five')
- # => raises "The input five does not match the rule integer"
+ # => "The input five does not match the rule integer"
 ```
 
 ###Rules
