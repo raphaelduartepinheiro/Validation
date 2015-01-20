@@ -12,5 +12,6 @@ require "resize/rules/is_multiple"
 require "resize/rules/is_empty"
 require "resize/rules/is_downcase"
 require "resize/rules/is_uppercase"
+require "resize/rules/is_domain"
 
 module Resize; end
