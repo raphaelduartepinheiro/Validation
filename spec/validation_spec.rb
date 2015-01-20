@@ -16,6 +16,16 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(integer: "five")).to eq(false)
     end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(integer: 5)).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(integer: "five")}.to raise_error("The input five does not match the rule integer")
+      end
+    end
   end
 
   context "validate is boolean" do
@@ -25,6 +35,16 @@ describe Resize::Validation do
 
     it "should return false" do
       expect(subject.validate(boolean: "true")).to eq(false)
+    end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(boolean: false)).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(boolean: "false")}.to raise_error("The input false does not match the rule boolean")
+      end
     end
   end
 
@@ -36,6 +56,16 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(string: 5)).to eq(false)
     end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(string: "string")).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(string: true)}.to raise_error("The input true does not match the rule string")
+      end
+    end
   end
 
   context "validate is positive" do
@@ -45,6 +75,16 @@ describe Resize::Validation do
 
     it "should return false" do
       expect(subject.validate(positive: -5)).to eq(false)
+    end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(positive: 5)).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(positive: -10)}.to raise_error("The input -10 does not match the rule positive")
+      end
     end
   end
 
@@ -56,6 +96,16 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(negative: 5)).to eq(false)
     end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(negative: -5)).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(negative: 10)}.to raise_error("The input 10 does not match the rule negative")
+      end
+    end
   end
 
   context "validate is email" do
@@ -65,6 +115,16 @@ describe Resize::Validation do
 
     it "should return false" do
       expect(subject.validate(email: "user@example")).to eq(false)
+    end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(email: "londerson@gmail.com")).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(email: 10)}.to raise_error("The input 10 does not match the rule email")
+      end
     end
   end
 
@@ -126,5 +186,5 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(uppercase: "My name")).to eq(false)
     end
-  end  
+  end
 end
