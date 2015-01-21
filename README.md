@@ -3,25 +3,31 @@
 [![Code Climate](https://codeclimate.com/github/Resize/Validation/badges/gpa.svg)](https://codeclimate.com/github/Resize/Validation)
 [![Test Coverage](https://codeclimate.com/github/Resize/Validation/badges/coverage.svg)](https://codeclimate.com/github/Resize/Validation)
 
-An extensive pack of customizable and extensible validation.
+An extensive pack of customizable and extensible validation to your objects.
 
 ###Installation
 
 ```shell
-gem install resize_validation
+$ gem install resize_validation
 ```
 
 ```shell
-require 'resize-validation'
+$ require 'resize-validation'
 ```
 
 ###Usage
 
+A minimal implementation could be:
+
 ```ruby
 Resize::Validation::validation(email: 'londerson@gmail.com')
  # => true
+ ```
+ ```ruby
 Resize::Validation::validation(string: 5)
  # => false
+ ```
+ ```ruby
 Resize::Validation::validation!(integer: 'five')
  # => "The input five does not match the rule integer"
 ```
