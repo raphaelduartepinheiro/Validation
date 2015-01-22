@@ -187,4 +187,24 @@ describe Resize::Validation do
       expect(subject.validate(uppercase: "My name")).to eq(false)
     end
   end
+
+  context "validate is RG" do
+    it "should return true" do
+      expect(subject.validate(rg: "418757896")).to eq(true)
+    end
+
+    it "should return false" do
+      expect(subject.validate(rg: "121232123")).to eq(false)
+    end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(rg: "418757896")).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(rg: "121232123")}.to raise_error("The input 121232123 does not match the rule rg")
+      end
+    end
+  end
 end

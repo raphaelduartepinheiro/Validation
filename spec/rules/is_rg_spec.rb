@@ -1,7 +1,7 @@
 require "spec_helper"
 
-describe Resize::Validation::Rules::IsRG do
-  before { extend Resize::Validation::Rules::IsRG }
+describe Resize::Validation::Rules::IsRg do
+  before { extend Resize::Validation::Rules::IsRg }
   
   context "a valid RG" do
     it "should return true" do
