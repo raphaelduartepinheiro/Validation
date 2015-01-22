@@ -136,6 +136,16 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(date: "100-120-2015")).to eq(false)
     end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(date: "20-12-2015")).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(date: "100-120-2015")}.to raise_error("The input 100-120-2015 does not match the rule date")
+      end
+    end
   end
 
   context "validate is json" do
@@ -145,6 +155,16 @@ describe Resize::Validation do
 
     it "should return false" do
       expect(subject.validate(json: '{"name"; "resize"}')).to eq(false)
+    end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(json: '{"name": "resize"}')).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(json: '{"name"; "resize"}')}.to raise_error('The input {"name"; "resize"} does not match the rule json')
+      end
     end
   end
 
@@ -156,6 +176,16 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(multiple: [8, 3])).to eq(false)
     end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(multiple: [9, 3])).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(multiple: [8, 3])}.to raise_error("The input [8, 3] does not match the rule multiple")
+      end
+    end
   end
 
   context "validate is empty" do
@@ -165,6 +195,16 @@ describe Resize::Validation do
 
     it "should return false" do
       expect(subject.validate(empty: "londerson@gmail.com")).to eq(false)
+    end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(empty: "")).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(empty: "londerson@gmail.com")}.to raise_error("The input londerson@gmail.com does not match the rule empty")
+      end
     end
   end
 
@@ -176,6 +216,16 @@ describe Resize::Validation do
     it "should return false" do
       expect(subject.validate(downcase: "My name")).to eq(false)
     end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(downcase: "my name")).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(downcase: "My name")}.to raise_error("The input My name does not match the rule downcase")
+      end
+    end
   end
 
   context "validate is uppercase" do
@@ -185,6 +235,16 @@ describe Resize::Validation do
 
     it "should return false" do
       expect(subject.validate(uppercase: "My name")).to eq(false)
+    end
+
+    context "validate with raise error" do
+      it "should return true" do
+        expect(subject.validate!(uppercase: "MY NAME")).to eq(true)
+      end
+
+      it "should return false" do
+        expect{ subject.validate!(uppercase: "My name")}.to raise_error("The input My name does not match the rule uppercase")
+      end
     end
   end
 
