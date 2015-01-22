@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_string"
 
 describe Resize::Validation::Rules::IsString do
   before { extend Resize::Validation::Rules::IsString }

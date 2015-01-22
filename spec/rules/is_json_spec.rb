@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_json"
 
 describe Resize::Validation::Rules::IsJson do
   before { extend Resize::Validation::Rules::IsJson }

@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_rg"
 
 describe Resize::Validation::Rules::IsRG do
   before { extend Resize::Validation::Rules::IsRG }

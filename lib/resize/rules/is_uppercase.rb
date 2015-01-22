@@ -1,10 +1,10 @@
 module Resize
   module Validation
     module Rules
-      module IsEmail
+      module IsUppercase
         private
           def is_valid?(input)
-            !/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.match(input.to_s).nil?
+            input == input.upcase ? true : false
           end
       end
     end

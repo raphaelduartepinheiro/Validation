@@ -1,5 +1,4 @@
 require "spec_helper"
-require "resize/rules/is_multiple"
 
 describe Resize::Validation::Rules::IsMultiple do
   before { extend Resize::Validation::Rules::IsMultiple }
