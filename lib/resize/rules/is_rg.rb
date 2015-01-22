@@ -1,7 +1,7 @@
 module Resize
   module Validation
     module Rules
-      module IsRg
+      module IsRG
         private
           def is_valid?(rg)
             rg = rg.split("")
