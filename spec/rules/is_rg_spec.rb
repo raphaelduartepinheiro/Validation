@@ -1,8 +1,7 @@
 require "spec_helper"
-require "resize/rules/is_email"
 
-describe Resize::Validation::Rules::IsRg do
-  before { extend Resize::Validation::Rules::IsRg }
+describe Resize::Validation::Rules::IsRG do
+  before { extend Resize::Validation::Rules::IsRG }
   
   context "a valid RG" do
     it "should return true" do

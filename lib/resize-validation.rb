@@ -13,5 +13,6 @@ require "resize/rules/is_empty"
 require "resize/rules/is_downcase"
 require "resize/rules/is_uppercase"
 require "resize/rules/is_domain"
+require "resize/rules/is_rg"
 
 module Resize; end
