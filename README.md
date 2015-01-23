@@ -32,6 +32,25 @@ Resize::Validation::validation!(integer: 'five')
  # => "The input five does not match the rule integer"
 ```
 
+A chained implementation could be:
+
+```ruby
+  Resize::Validation::validates do |v|
+    v.validate(integer: 5)
+    v.validate(uppercase: "NAME")
+    v.validate(boolean: false)
+  end
+  # => true
+```
+```ruby
+  Resize::Validation::validates do |v|
+    v.validate(integer: 5)
+    v.validate(uppercase: "NAME")
+    v.validate(boolean: "IV")
+  end
+  # => false
+```
+
 Rules
 -----
 
