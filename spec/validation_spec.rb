@@ -8,6 +8,30 @@ describe Resize::Validation do
     expect(subject.private_methods.include?(:is_valid?)).to eq(true)
   end
 
+  context "chained validations" do
+    it "should return true" do
+      validations = Resize::Validation::validates do |v|
+        v.validate(integer: 5)
+        v.validate(uppercase: "NAME")
+        v.validate(boolean: false)
+      end
+
+      expect(validations).to eq(true)
+    end
+  end
+
+  context "chained validations" do
+    it "should return true" do
+      validations = Resize::Validation::validates do |v|
+        v.validate(integer: "5")
+        v.validate(uppercase: "NAME")
+        v.validate(boolean: false)
+      end
+
+      expect(validations).to eq(false)
+    end
+  end
+
   context "validate is integer" do
     it "should return true" do
       expect(subject.validate(integer: 5)).to eq(true)
