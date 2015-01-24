@@ -32,7 +32,7 @@ Resize::Validation::validation!(integer: 'five')
  # => "The input five does not match the rule integer"
 ```
 
-A chained implementation could be:
+A composable implementation could be:
 
 ```ruby
   Resize::Validation::validates do |v|
@@ -49,6 +49,25 @@ A chained implementation could be:
     v.validate(boolean: "IV")
   end
   # => false
+```
+Catching errors
+
+```ruby
+  Resize::Validation::validates! do |v|
+    v.validate(integer: 5)
+    v.validate(uppercase: "NAME")
+    v.validate(boolean: "IV")
+  end
+  # => {:status=>true, :errors=>[]}
+```
+
+```ruby
+  Resize::Validation::validates! do |v|
+    v.validate(integer: "5")
+    v.validate(uppercase: "NAME")
+    v.validate(boolean: "IV")
+  end
+  # => {:status=>false, :errors=>["The input 5 does not match the rule integer"]}
 ```
 
 Rules
