@@ -9,7 +9,7 @@ describe Resize::Validation do
   end
 
   context "chained validations" do
-    it "should return true for valid? ask" do
+    it "should return status true and empty array of erros" do
       validations = Resize::Validation::validates! do |v|
         v.validate(integer: 5)
         v.validate(uppercase: "NAME")
@@ -23,7 +23,7 @@ describe Resize::Validation do
   end
 
   context "chained validations" do
-    it "should return false for valid? ask" do
+    it "should return status false and array with some errors" do
       validations = Resize::Validation::validates! do |v|
         v.validate(integer: "5")
         v.validate(uppercase: "NAME")
