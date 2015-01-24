@@ -102,6 +102,14 @@ Rules
 * [is_rg](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_rg.rb "Title")
 * [is_domain](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_uppercase.rb "Title")
 
+###Contributing
+
+1. Fork it ( https://github.com/Resize/Validation/fork )
+2. Create your feature branch (`git checkout -b new_feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin new_feature`)
+5. Create a new Pull Request
+
 ###License
 
 Copyright © 2014 Londerson Araújo, released under the MIT license
