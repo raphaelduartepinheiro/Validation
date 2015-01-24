@@ -8,7 +8,7 @@ An extensive pack of customizable and extensible validation to your objects.
 ###Installation
 
 ```shell
-$ gem install resize_validation
+$ gem install resize-validation
 ```
 
 ```shell
