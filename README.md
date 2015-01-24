@@ -20,16 +20,18 @@ $ require 'resize-validation'
 A minimal implementation could be:
 
 ```ruby
-Resize::Validation::validation(email: 'londerson@gmail.com')
+Resize::Validation::validate(email: 'londerson@gmail.com')
  # => true
  ```
  ```ruby
-Resize::Validation::validation(string: 5)
+Resize::Validation::validate(string: 5)
  # => false
  ```
+raise custom exception
+
  ```ruby
-Resize::Validation::validation!(integer: 'five')
- # => "The input five does not match the rule integer"
+Resize::Validation::validate!(integer: 'five')
+ # => "The input five does not match the rule integer (TypeError)"
 ```
 
 A composable implementation could be:
