@@ -9,8 +9,8 @@ describe Resize::Validation do
   end
 
   context "chained validations" do
-    it "should return true" do
-      validations = Resize::Validation::validates do |v|
+    it "should return true for valid? ask" do
+      validations = Resize::Validation::validates! do |v|
         v.validate(integer: 5)
         v.validate(uppercase: "NAME")
         v.validate(boolean: false)
@@ -21,14 +21,28 @@ describe Resize::Validation do
   end
 
   context "chained validations" do
-    it "should return true" do
-      validations = Resize::Validation::validates do |v|
+    it "should return false for valid? ask" do
+      validations = Resize::Validation::validates! do |v|
         v.validate(integer: "5")
         v.validate(uppercase: "NAME")
         v.validate(boolean: false)
       end
 
-      expect(validations).to eq(false)
+      error = ["The input 5 does not match the rule integer"]
+      expect(validations[:status]).to eq(false)
+      expect(validations[:errors]).to eq(error)
+      expect(validations[:errors]).to eq(error)
+
+      validations = Resize::Validation::validates! do |v|
+        v.validate(integer: "5")
+        v.validate(uppercase: "NAME")
+        v.validate(boolean: false)
+      end
+
+      error = ["The input 5 does not match the rule integer"]
+      expect(validations[:status]).to eq(false)
+      expect(validations[:errors]).to eq(error)
+      expect(validations[:errors]).to eq(error)      
     end
   end
 

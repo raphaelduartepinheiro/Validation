@@ -40,7 +40,6 @@ module Resize
     end
 
     def validates
-
       Class.instance_eval do
         extend Resize::Validation
       end
@@ -63,6 +62,49 @@ module Resize
       end
 
       (yield proxy).all? { |x| x == true }
+    end
+
+    def validates!
+      Class.instance_eval do
+        extend Resize::Validation
+      end
+
+      base_class = self
+      proxy = Class.new(DelegateClass(base_class)) do
+        @results = []
+
+        def self.validate(input)
+          option = self.class.set_values(input)
+          self.class.load_module(option[:rule])
+
+          if option[:input].kind_of?(Array)
+            unless is_valid?(option[:input][0], option[:input][1])
+              @results << "The input #{option[:input]} does not match the rule #{option[:rule]}"
+            else
+              @results << true
+            end
+          else
+            p input
+            p "----"
+            unless is_valid?(option[:input])
+              @results << "The input #{option[:input]} does not match the rule #{option[:rule]}"
+            else
+              @results << true
+            end
+          end
+        end
+      end
+
+      result = (yield(proxy))
+      status = result.all? { |e| e == true }
+      errors = []
+      result.each do |e|
+        unless e.is_a?(TrueClass) || e.is_a?(FalseClass)
+          errors << e
+        end
+      end
+
+      status == true ? true : {status: false, errors: errors}
     end
   end
 end
