@@ -107,7 +107,7 @@ module Resize
         end
       end
 
-      status == true ? true : {status: false, errors: errors}
+      status == true ? {status: true, errors: errors} : {status: false, errors: errors}
     end
   end
 end
