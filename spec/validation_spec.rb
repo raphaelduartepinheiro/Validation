@@ -31,18 +31,6 @@ describe Resize::Validation do
       error = ["The input 5 does not match the rule integer"]
       expect(validations[:status]).to eq(false)
       expect(validations[:errors]).to eq(error)
-      expect(validations[:errors]).to eq(error)
-
-      validations = Resize::Validation::validates! do |v|
-        v.validate(integer: "5")
-        v.validate(uppercase: "NAME")
-        v.validate(boolean: false)
-      end
-
-      error = ["The input 5 does not match the rule integer"]
-      expect(validations[:status]).to eq(false)
-      expect(validations[:errors]).to eq(error)
-      expect(validations[:errors]).to eq(error)      
     end
   end
 

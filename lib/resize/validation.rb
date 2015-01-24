@@ -31,12 +31,7 @@ module Resize
 
     def load_module(name)
       module_name = "Is#{name.capitalize}"
-
-      begin
-        extend self::Rules::const_get(module_name)
-      rescue
-        include Rules::const_get(module_name)
-      end
+      extend self::Rules::const_get(module_name)
     end
 
     def validates
@@ -51,13 +46,18 @@ module Resize
 
         def self.validate(input)
           option = self.class.set_values(input)
-          self.class.load_module(option[:rule])
+          load_module(option[:rule])
 
           if option[:input].kind_of?(Array)
             @results << is_valid?(option[:input][0], option[:input][1])
           else
             @results << is_valid?(option[:input])
           end
+        end
+
+        def self.load_module(name)
+          module_name = "Is#{name.capitalize}"
+          extend Rules::const_get(module_name)
         end
       end
 
@@ -75,7 +75,7 @@ module Resize
 
         def self.validate(input)
           option = self.class.set_values(input)
-          self.class.load_module(option[:rule])
+          load_module(option[:rule])
 
           if option[:input].kind_of?(Array)
             unless is_valid?(option[:input][0], option[:input][1])
@@ -84,14 +84,17 @@ module Resize
               @results << true
             end
           else
-            p input
-            p "----"
             unless is_valid?(option[:input])
               @results << "The input #{option[:input]} does not match the rule #{option[:rule]}"
             else
               @results << true
             end
           end
+        end
+
+        def self.load_module(name)
+          module_name = "Is#{name.capitalize}"
+          extend Rules::const_get(module_name)
         end
       end
 
