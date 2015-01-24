@@ -9,6 +9,27 @@ describe Resize::Validation do
   end
 
   context "chained validations" do
+
+    it "should return true" do
+      validations = Resize::Validation::validates do |v|
+        v.validate(integer: 5)
+        v.validate(uppercase: "NAME")
+        v.validate(boolean: false)
+      end
+
+      expect(validations).to eq(true)
+    end
+
+    it "should return false" do
+      validations = Resize::Validation::validates do |v|
+        v.validate(integer: "5")
+        v.validate(uppercase: "NAME")
+        v.validate(boolean: false)
+      end
+
+      expect(validations).to eq(false)
+    end
+
     it "should return status true and empty array of erros" do
       validations = Resize::Validation::validates! do |v|
         v.validate(integer: 5)
@@ -20,9 +41,7 @@ describe Resize::Validation do
       expect(validations[:status]).to eq(true)
       expect(validations[:errors]).to eq([])
     end
-  end
 
-  context "chained validations" do
     it "should return status false and array with some errors" do
       validations = Resize::Validation::validates! do |v|
         v.validate(integer: "5")
