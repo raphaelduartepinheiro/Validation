@@ -44,9 +44,9 @@ A composable implementation could be:
 ```
 ```ruby
   Resize::Validation::validates do |v|
-    v.validate(integer: 5)
+    v.validate(integer: "5")
     v.validate(uppercase: "NAME")
-    v.validate(boolean: "IV")
+    v.validate(boolean: false)
   end
   # => false
 ```
@@ -56,7 +56,7 @@ Catching errors
   Resize::Validation::validates! do |v|
     v.validate(integer: 5)
     v.validate(uppercase: "NAME")
-    v.validate(boolean: "IV")
+    v.validate(boolean: false)
   end
   # => {:status=>true, :errors=>[]}
 ```
@@ -65,7 +65,7 @@ Catching errors
   Resize::Validation::validates! do |v|
     v.validate(integer: "5")
     v.validate(uppercase: "NAME")
-    v.validate(boolean: "IV")
+    v.validate(boolean: false)
   end
   # => {:status=>false, :errors=>["The input 5 does not match the rule integer"]}
 ```
