@@ -8,7 +8,7 @@ An extensive pack of customizable and extensible validation to your objects.
 ###Installation
 
 ```shell
-$ gem install resize_validation
+$ gem install resize-validation
 ```
 
 ```shell
@@ -20,16 +20,56 @@ $ require 'resize-validation'
 A minimal implementation could be:
 
 ```ruby
-Resize::Validation::validation(email: 'londerson@gmail.com')
+Resize::Validation::validate(email: 'londerson@gmail.com')
  # => true
  ```
  ```ruby
-Resize::Validation::validation(string: 5)
+Resize::Validation::validate(string: 5)
  # => false
  ```
+raise custom exception:
+
  ```ruby
-Resize::Validation::validation!(integer: 'five')
- # => "The input five does not match the rule integer"
+Resize::Validation::validate!(integer: 'five')
+ # => "The input five does not match the rule integer (TypeError)"
+```
+
+A composable implementation could be:
+
+```ruby
+  Resize::Validation::validates do |v|
+    v.validate(integer: 5)
+    v.validate(uppercase: "NAME")
+    v.validate(boolean: false)
+  end
+  # => true
+```
+```ruby
+  Resize::Validation::validates do |v|
+    v.validate(integer: "5")
+    v.validate(uppercase: "NAME")
+    v.validate(boolean: false)
+  end
+  # => false
+```
+Catching errors:
+
+```ruby
+  Resize::Validation::validates! do |v|
+    v.validate(integer: 5)
+    v.validate(uppercase: "NAME")
+    v.validate(boolean: false)
+  end
+  # => {:status=>true, :errors=>[]}
+```
+
+```ruby
+  Resize::Validation::validates! do |v|
+    v.validate(integer: "5")
+    v.validate(uppercase: "NAME")
+    v.validate(boolean: false)
+  end
+  # => {:status=>false, :errors=>["The input 5 does not match the rule integer"]}
 ```
 
 Rules
@@ -63,6 +103,14 @@ Rules
 * [is_json](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_json.rb "Title")
 * [is_rg](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_rg.rb "Title")
 * [is_domain](https://github.com/Resize/Validation/blob/master/lib/resize/rules/is_uppercase.rb "Title")
+
+###Contributing
+
+1. Fork it ( https://github.com/Resize/Validation/fork )
+2. Create your feature branch (`git checkout -b new_feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin new_feature`)
+5. Create a new Pull Request
 
 ###License
 

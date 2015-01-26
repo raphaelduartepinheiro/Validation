@@ -8,6 +8,56 @@ describe Resize::Validation do
     expect(subject.private_methods.include?(:is_valid?)).to eq(true)
   end
 
+  context "chained validations" do
+
+    it "should return true" do
+      validations = Resize::Validation::validates do |v|
+        v.validate(integer: 5)
+        v.validate(uppercase: "NAME")
+        v.validate(boolean: false)
+      end
+
+      expect(validations).to eq(true)
+    end
+
+    it "should return false" do
+      validations = Resize::Validation::validates do |v|
+        v.validate(integer: "5")
+        v.validate(uppercase: "NAME")
+        v.validate(boolean: false)
+      end
+
+      expect(validations).to eq(false)
+    end
+
+    context "catching errors" do
+      it "should return status true and empty array of erros" do
+        validations = Resize::Validation::validates! do |v|
+          v.validate(integer: 5)
+          v.validate(uppercase: "NAME")
+          v.validate(boolean: false)
+        end
+
+        expect(validations).to eq({:status=>true, :errors=>[]})
+        expect(validations[:status]).to eq(true)
+        expect(validations[:errors]).to eq([])
+      end
+
+      it "should return status false and array with some errors" do
+        validations = Resize::Validation::validates! do |v|
+          v.validate(integer: "5")
+          v.validate(uppercase: "NAME")
+          v.validate(boolean: false)
+        end
+
+        error = ["The input 5 does not match the rule integer"]
+        expect(validations).to eq({:status=>false, :errors=>error})
+        expect(validations[:status]).to eq(false)
+        expect(validations[:errors]).to eq(error)
+      end
+    end
+  end
+
   context "validate is integer" do
     it "should return true" do
       expect(subject.validate(integer: 5)).to eq(true)
